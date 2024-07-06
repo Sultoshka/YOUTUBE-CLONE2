@@ -11,6 +11,7 @@ class Video_model(models.Model):
     like = models.IntegerField(default=0)
     dislike = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
+    favorites = models.ManyToManyField(user, related_name='favorite_videos', blank=True)
 
     def __str__(self):
         return self.video_title
